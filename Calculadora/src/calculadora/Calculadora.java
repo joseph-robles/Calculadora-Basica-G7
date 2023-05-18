@@ -617,7 +617,18 @@ public class Calculadora extends javax.swing.JFrame {
             activado = false;
         }
     }//GEN-LAST:event_botonInversaActionPerformed
+    
+    private void botonCuadradoActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+       if (activado == true) {
+           primerNumero = Double.parseDouble(cadenaNumeros);
+           etiquetaMuestra.setText(cadenaNumeros + "^2" );
+           resultado = Math.pow(primerNumero,2);
+           cadenaNumeros = String.valueOf(resultado);
+       }
+    }
 
+    
 <<<<<<< HEAD
     private void botonCuboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCuboActionPerformed
         primerNumero = Double.parseDouble(cadenaNumeros);
