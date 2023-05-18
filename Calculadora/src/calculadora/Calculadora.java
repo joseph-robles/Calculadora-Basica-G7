@@ -518,6 +518,13 @@ public class Calculadora extends javax.swing.JFrame {
             operacion = "nula";
         }
         
+        else if(operacion.equals("PotenciaCuadrado")){
+            resultado = Math.pow(primerNumero,2);
+            etiquetaNumeros.setText(String.format("% .6f",resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }
+        
         etiquetaMuestra.setText("");
         activado = true;
         punto = false;
