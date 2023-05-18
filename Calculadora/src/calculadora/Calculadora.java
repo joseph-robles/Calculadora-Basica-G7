@@ -95,7 +95,12 @@ public class Calculadora extends javax.swing.JFrame {
         botonRaiz.setBounds(162, 1, 81, 64);
 
         botonExtra.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        botonExtra.setText("Extra");
+        botonExtra.setText("Raiz(3)");
+        botonExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonExtraActionPerformed(evt);
+            }
+        });
         panel.add(botonExtra);
         botonExtra.setBounds(243, 1, 81, 64);
 
@@ -630,6 +635,15 @@ public class Calculadora extends javax.swing.JFrame {
         etiquetaNumeros.setText(String.valueOf(resultado));
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
     }//GEN-LAST:event_botonPorcentajeActionPerformed
+
+    private void botonExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonExtraActionPerformed
+        // Raiz cubica: wilker atalaya
+        primerNumero = Double.parseDouble(cadenaNumeros);
+        etiquetaMuestra.setText("Raiz(3)("+cadenaNumeros+")");
+        resultado = Math.pow(primerNumero,(0.3333));
+        etiquetaNumeros.setText(String.format("%.2f", resultado));
+        cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
+    }//GEN-LAST:event_botonExtraActionPerformed
 >>>>>>> 2781f5049497d6e743a9ac2aa6ed45d13aca252f
 
     /**
