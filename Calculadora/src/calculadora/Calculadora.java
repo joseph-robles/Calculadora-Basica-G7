@@ -265,6 +265,11 @@ public class Calculadora extends javax.swing.JFrame {
 
         botonInversa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botonInversa.setText("1/x");
+        botonInversa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonInversaActionPerformed(evt);
+            }
+        });
         panel.add(botonInversa);
         botonInversa.setBounds(0, 257, 81, 64);
 
@@ -460,14 +465,14 @@ public class Calculadora extends javax.swing.JFrame {
         
         else if(operacion.equals("sumar")){
             segundoNumero = Double.parseDouble(cadenaNumeros);
-            resultado = primerNumero + segundoNumero;;
+            resultado = primerNumero + segundoNumero;
             etiquetaNumeros.setText(String.format("% .2f",resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
         }
         else if(operacion.equals("restar")){
             segundoNumero = Double.parseDouble(cadenaNumeros);
-            resultado = primerNumero - segundoNumero;;
+            resultado = primerNumero - segundoNumero;
             etiquetaNumeros.setText(String.format("% .2f",resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
@@ -475,7 +480,7 @@ public class Calculadora extends javax.swing.JFrame {
         
         else if(operacion.equals("multiplicar")){
             segundoNumero = Double.parseDouble(cadenaNumeros);
-            resultado = primerNumero * segundoNumero;;
+            resultado = primerNumero * segundoNumero;
             etiquetaNumeros.setText(String.format("% .2f",resultado));
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
@@ -485,11 +490,17 @@ public class Calculadora extends javax.swing.JFrame {
             if (segundoNumero == 0) {
                 etiquetaNumeros.setText("NoSeDividePor0");
             } else {
-                resultado = primerNumero / segundoNumero;;
+                resultado = primerNumero / segundoNumero;
                 etiquetaNumeros.setText(String.format("% .2f", resultado));
                 cadenaNumeros = String.valueOf(resultado);
                 operacion = "nula";
             }
+        }
+        else if(operacion.equals("inversa")){
+            resultado = 1/primerNumero;
+            etiquetaNumeros.setText(String.format("% .6f",resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
         }
         
         etiquetaMuestra.setText("");
@@ -579,6 +590,18 @@ public class Calculadora extends javax.swing.JFrame {
             etiquetaNumeros.setText(cadenaNumeros);
         }
     }//GEN-LAST:event_botonCEActionPerformed
+
+    private void botonInversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInversaActionPerformed
+        if (activado == true) {
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            etiquetaMuestra.setText("1/" + cadenaNumeros + " ");
+            cadenaNumeros = "";
+            etiquetaNumeros.setText("");
+            operacion = "inversa";
+
+            activado = false;
+        }
+    }//GEN-LAST:event_botonInversaActionPerformed
 
     /**
      * @param args the command line arguments
