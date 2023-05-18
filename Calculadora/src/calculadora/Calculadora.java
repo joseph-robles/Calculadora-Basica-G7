@@ -227,6 +227,11 @@ public class Calculadora extends javax.swing.JFrame {
 
         botonPorcentaje.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botonPorcentaje.setText("%");
+        botonPorcentaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPorcentajeActionPerformed(evt);
+            }
+        });
         panel.add(botonPorcentaje);
         botonPorcentaje.setBounds(0, 193, 81, 64);
 
@@ -602,6 +607,15 @@ public class Calculadora extends javax.swing.JFrame {
             activado = false;
         }
     }//GEN-LAST:event_botonInversaActionPerformed
+
+    private void botonPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPorcentajeActionPerformed
+        // TODO add your handling code here:
+        primerNumero = Double.parseDouble(cadenaNumeros);
+        etiquetaMuestra.setText(cadenaNumeros+"%");
+        resultado = primerNumero/100;
+        etiquetaNumeros.setText(String.valueOf(resultado));
+        cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
+    }//GEN-LAST:event_botonPorcentajeActionPerformed
 
     /**
      * @param args the command line arguments
