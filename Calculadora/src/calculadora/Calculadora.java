@@ -111,6 +111,11 @@ public class Calculadora extends javax.swing.JFrame {
 
         botonCubo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botonCubo.setText("^3");
+        botonCubo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCuboActionPerformed(evt);
+            }
+        });
         panel.add(botonCubo);
         botonCubo.setBounds(0, 65, 81, 64);
 
@@ -602,6 +607,14 @@ public class Calculadora extends javax.swing.JFrame {
             activado = false;
         }
     }//GEN-LAST:event_botonInversaActionPerformed
+
+    private void botonCuboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCuboActionPerformed
+        primerNumero = Double.parseDouble(cadenaNumeros);
+        etiquetaMuestra.setText("("+cadenaNumeros+")^3");
+        resultado = Math.pow(primerNumero,3);
+        etiquetaNumeros.setText(String.format("%.2f", resultado));
+        cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena// TODO add your handling code here:
+    }//GEN-LAST:event_botonCuboActionPerformed
 
     /**
      * @param args the command line arguments
