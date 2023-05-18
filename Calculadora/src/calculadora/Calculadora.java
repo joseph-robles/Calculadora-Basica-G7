@@ -613,7 +613,6 @@ public class Calculadora extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonInversaActionPerformed
 
-<<<<<<< HEAD
     private void botonCuboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCuboActionPerformed
         primerNumero = Double.parseDouble(cadenaNumeros);
         etiquetaMuestra.setText("("+cadenaNumeros+")^3");
@@ -621,7 +620,7 @@ public class Calculadora extends javax.swing.JFrame {
         etiquetaNumeros.setText(String.format("%.2f", resultado));
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena// TODO add your handling code here:
     }//GEN-LAST:event_botonCuboActionPerformed
-=======
+
     private void botonPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPorcentajeActionPerformed
         // TODO add your handling code here:
         primerNumero = Double.parseDouble(cadenaNumeros);
@@ -630,7 +629,6 @@ public class Calculadora extends javax.swing.JFrame {
         etiquetaNumeros.setText(String.valueOf(resultado));
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
     }//GEN-LAST:event_botonPorcentajeActionPerformed
->>>>>>> 2781f5049497d6e743a9ac2aa6ed45d13aca252f
 
     /**
      * @param args the command line arguments
