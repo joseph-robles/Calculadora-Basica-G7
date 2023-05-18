@@ -622,12 +622,11 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCuboActionPerformed
 
     private void botonPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPorcentajeActionPerformed
-        // TODO add your handling code here:
         primerNumero = Double.parseDouble(cadenaNumeros);
         etiquetaMuestra.setText(cadenaNumeros+"%");
         resultado = primerNumero/100;
         etiquetaNumeros.setText(String.valueOf(resultado));
-        cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
+        cadenaNumeros = String.valueOf(resultado);
     }//GEN-LAST:event_botonPorcentajeActionPerformed
 
     /**
