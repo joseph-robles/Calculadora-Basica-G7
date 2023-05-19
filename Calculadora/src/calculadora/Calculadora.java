@@ -524,6 +524,14 @@ public class Calculadora extends javax.swing.JFrame {
             cadenaNumeros = String.valueOf(resultado);
             operacion = "nula";
         }
+          else if(operacion.equals("^n")) {
+            segundoNumero = Double.parseDouble(etiquetaNumeros.getText());
+            double resultado = Math.pow(primerNumero, segundoNumero);
+            etiquetaNumeros.setText(String.valueOf(resultado));
+            etiquetaMuestra.setText("");
+        } else {
+            // Resto del código para las otras operaciones
+        }
         
         etiquetaMuestra.setText("");
         activado = true;
@@ -636,7 +644,7 @@ public class Calculadora extends javax.swing.JFrame {
     }
 
     
-<<<<<<< HEAD
+
     private void botonCuboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCuboActionPerformed
         primerNumero = Double.parseDouble(cadenaNumeros);
         etiquetaMuestra.setText("("+cadenaNumeros+")^3");
@@ -644,7 +652,7 @@ public class Calculadora extends javax.swing.JFrame {
         etiquetaNumeros.setText(String.format("%.2f", resultado));
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena// TODO add your handling code here:
     }//GEN-LAST:event_botonCuboActionPerformed
-=======
+
     private void botonPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPorcentajeActionPerformed
         // TODO add your handling code here:
         primerNumero = Double.parseDouble(cadenaNumeros);
@@ -662,7 +670,20 @@ public class Calculadora extends javax.swing.JFrame {
         etiquetaNumeros.setText(String.format("%.2f", resultado));
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
     }//GEN-LAST:event_botonExtraActionPerformed
->>>>>>> 2781f5049497d6e743a9ac2aa6ed45d13aca252f
+
+       private void botonNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNActionPerformed
+        // TODO add your handling code here:
+   if (activado == true) {
+        double base = Double.parseDouble(etiquetaNumeros.getText());
+        etiquetaMuestra.setText(base + "^");
+        primerNumero = base; // Guardar el primer número en la variable primerNumero
+        operacion = "^n";
+        cadenaNumeros = ""; // Reiniciar la cadena de números
+        activado = false;
+    }
+
+
+    }//GEN-LAST:event_botonNActionPerformed
 
     /**
      * @param args the command line arguments
